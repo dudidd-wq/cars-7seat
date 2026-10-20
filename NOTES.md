@@ -30,3 +30,10 @@ Last updated: 2026-10-20 (Asia/Jerusalem).
 ## Testing
 - Playwright-core (`/tmp/pw`), Chrome with SwiftShader WebGL: all pages, 412×915 and 1366×900, no console errors; 3D viewer loads 8/8.
 - Lighthouse results in the audit folder.
+
+## Checkpoint log
+- 2026-10-20 23:5x: repo created, Pages enabled (https://dudidd-wq.github.io/cars-7seat/), 2 commits pushed.
+- Lighthouse #1 (live): a11y/BP/SEO 98–100; perf 64–85 on specs/photos/viewer/credits due to CLS (JS-rendered content) and three.js parse TBT on viewer.
+- Fix in progress (2026-10-21 00:0x): scripts made synchronous right after their containers (no CLS); three.js split into lazily imported `assets/viewer3d-gl.js` (loaded only on "טען מודלים" click / `#autoload=1`).
+- 2026-10-21 00:45: fixed dynamic import path (`./viewer3d-gl.js` relative to script), portrait iso camera (binary-search fit + dynamic fog — mobile 3D was blank because camera was beyond fog/far plane), search box moved out of collapsible filters. Playwright: 20 runs, 0 console errors, 0 failed requests, 0 overflow, 8/8 models on mobile+desktop.
+- Privacy scan script: `/workspace/cars-7seat-audit/scripts/privacy_scan.py` (tokens from private sheet rows + patterns) — run before each push.

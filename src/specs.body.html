@@ -2,11 +2,12 @@
 <p class="lead">לחצו על כותרת עמודה כדי למיין, או סננו לפי סוג הנעה, מרכב, מושבים ומחיר. במובייל הנתונים מוצגים ככרטיסים.
 <span id="priceNote"></span></p>
 
-<details id="filtersBox" open><summary>סינון ומיון</summary>
-<form class="controls" id="filters" role="search" aria-label="סינון הטבלה" onsubmit="return false">
-  <label>חיפוש
+<form id="filters" role="search" aria-label="סינון הטבלה" onsubmit="return false">
+  <label class="qlabel">חיפוש
     <input type="search" id="q" placeholder="שם דגם…" autocomplete="off">
   </label>
+<details id="filtersBox" open><summary>סינון ומיון</summary>
+<div class="controls">
   <fieldset>
     <legend>הנעה</legend>
     <div class="chips" id="typeChips"></div>
@@ -27,8 +28,9 @@
     <select id="sortSel"></select>
   </label>
   <button type="button" id="reset">איפוס</button>
-</form>
+</div>
 </details>
+</form>
 <p class="status" id="count" role="status" aria-live="polite"></p>
 
 <div class="table-wrap has-cards">
@@ -39,6 +41,8 @@
 </table>
 </div>
 <div class="cards" id="cards"></div>
+<script src="assets/data.js"></script>
+<script src="assets/specs.js"></script>
 
 <section aria-labelledby="notes-h">
 <h2 id="notes-h">הערות</h2>
@@ -49,5 +53,3 @@
   <li>„טיגו 8 פרו” מופיע בשתי שורות (בנזין ו־PHEV), ולכן בטבלה 9 שורות ל־8 דגמים.</li>
 </ul>
 </section>
-<script src="assets/data.js"></script>
-<script src="assets/specs.js" defer></script>
