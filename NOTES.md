@@ -39,3 +39,4 @@ Last updated: 2026-10-20 (Asia/Jerusalem).
 - Privacy scan script: `/workspace/cars-7seat-audit/scripts/privacy_scan.py` (tokens from private sheet rows + patterns) — run before each push.
 - 2026-10-21 01:00: build.py now inlines data/media/page scripts (CLS 0 on all pages locally); pair/ghost-only viewer controls start hidden. Playwright 20/20 clean.
 - 2026-10-21 01:10: link check of 63 external URLs; fixed Maxus (no www), Hyundai price list (/prices) and Ioniq 9 page URLs; added Hyundai fee-inclusive prices.
+- 2026-10-21 01:25: AUDIT.md written (all categories >9). Final commit c32001f.
