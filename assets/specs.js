@@ -108,5 +108,6 @@ document.getElementById('reset').addEventListener('click',function(){
   state={sort:'price',dir:1,q:'',types:{EV:1,PHEV:1,HEV:1,ICE:1},body:'',max:''};
   document.getElementById('filters').reset(); chips.querySelectorAll('input').forEach(function(i){i.checked=true;}); render();
 });
+if(window.matchMedia('(max-width:760px)').matches)document.getElementById('filtersBox').open=false;
 render();
 })();

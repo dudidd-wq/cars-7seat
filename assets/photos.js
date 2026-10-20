@@ -57,15 +57,17 @@ function lineup(){
 function overlay(){
   var A=cars.filter(function(c){return c.id===st.a;})[0],B=cars.filter(function(c){return c.id===st.b;})[0];
   var wTmp=$('stageWrap').clientWidth-16,pad=12,maxL=Math.max(A.L,B.L);
-  var pxmm=(wTmp-2*pad)/(maxL*1.02); var h=Math.round(1900*pxmm+90); var w=setupCanvas(h); var yG=h-40;
+  var pxmm=(wTmp-2*pad)/(maxL*1.02); var h=Math.round(1900*pxmm+(wTmp<600?110:90)); var w=setupCanvas(h); var yG=h-40;
   grid(pad,w-2*pad,24,yG,pxmm);
   drawCar(A,pad,yG,pxmm,1); drawCar(B,pad,yG,pxmm,st.op);
   ctx.strokeStyle='#8893a0';ctx.beginPath();ctx.moveTo(0,yG+.5);ctx.lineTo(w,yG+.5);ctx.stroke();
   // length markers
   [[A,yG+14],[B,yG+28]].forEach(function(p){var c=p[0],y=p[1];ctx.strokeStyle=c.color;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(pad+c.L*pxmm,y);ctx.stroke();ctx.lineWidth=1;});
   var dL=A.L-B.L,dH=A.H-B.H,dW=A.W-B.W;
-  txt(A.full+' (אטום) מול '+B.full+' ('+Math.round(st.op*100)+'% שקיפות)',w-pad,16,{b:1,s:13});
-  txt('הפרש: אורך '+(dL>0?'+':'')+nf.format(dL)+' · רוחב '+(dW>0?'+':'')+nf.format(dW)+' · גובה '+(dH>0?'+':'')+nf.format(dH)+' מ״מ',w-pad,34,{s:12,c:'#4f5b69'});
+  var narrow=w<600;
+  if(narrow){txt(A.full+' (אטום)',w-pad,16,{b:1,s:12});txt('מול '+B.full+' ('+Math.round(st.op*100)+'% שקיפות)',w-pad,32,{b:1,s:12,c:B.color==='#c9a227'?'#8a6d00':'#16202b'});}
+  else txt(A.full+' (אטום) מול '+B.full+' ('+Math.round(st.op*100)+'% שקיפות)',w-pad,16,{b:1,s:13});
+  txt((narrow?'':'הפרש: ')+'אורך '+(dL>0?'+':'')+nf.format(dL)+' · רוחב '+(dW>0?'+':'')+nf.format(dW)+' · גובה '+(dH>0?'+':'')+nf.format(dH)+' מ״מ',w-pad,narrow?48:34,{s:narrow?11:12,c:'#4f5b69'});
   cv.setAttribute('aria-label','חפיפת '+A.full+' ו־'+B.full+'. הפרש אורך '+dL+' מ״מ, הפרש גובה '+dH+' מ״מ');
 }
 function front(){

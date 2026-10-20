@@ -20,6 +20,7 @@
 <p class="lead">לחצו על כותרת עמודה כדי למיין, או סננו לפי סוג הנעה, מרכב, מושבים ומחיר. במובייל הנתונים מוצגים ככרטיסים.
 <span id="priceNote"></span></p>
 
+<details id="filtersBox" open><summary>סינון ומיון</summary>
 <form class="controls" id="filters" role="search" aria-label="סינון הטבלה" onsubmit="return false">
   <label>חיפוש
     <input type="search" id="q" placeholder="שם דגם…" autocomplete="off">
@@ -45,6 +46,7 @@
   </label>
   <button type="button" id="reset">איפוס</button>
 </form>
+</details>
 <p class="status" id="count" role="status" aria-live="polite"></p>
 
 <div class="table-wrap has-cards">

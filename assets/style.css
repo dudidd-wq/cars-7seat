@@ -95,3 +95,9 @@ td{min-width:5.5rem}
 #tbl td:nth-child(11),#tbl td:nth-child(9),#tbl td:nth-child(8){min-width:11rem}
 #tbl td:nth-child(14){min-width:12rem}
 #tbl td:nth-child(15){min-width:14rem}
+#tbl td:nth-child(2){min-width:9.5rem}
+.cards ul.trims li{white-space:normal}
+.kv dd{min-width:0;overflow-wrap:anywhere}
+.cards .card{min-width:0}
+#filtersBox>summary{font-weight:600;padding:.4rem 0;min-height:44px;display:flex;align-items:center}
+@media(min-width:761px){#filtersBox>summary{display:none}}
