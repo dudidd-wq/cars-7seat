@@ -18,7 +18,7 @@ def header(cur):
 <a class="brand" href="./">🚙 השוואת רכבי 7 מקומות</a>
 <nav aria-label="ניווט ראשי"><ul class="nav">{items}</ul></nav>
 </div></header>'''
-FOOTER = '''<footer class="site-footer"><div class="wrap">
+FOOTER = '''<footer class="site-footer" id="site-footer"><div class="wrap">
 <span>עודכן לאחרונה: <time datetime="2026-10-20">20.10.2026</time></span>
 <span>נתונים ציבוריים בלבד (יבואנים, יצרנים, Euro NCAP, ביקורות מקושרות). המחירים עשויים להשתנות — יש לאמת מול היבואן.</span>
 <span><a href="credits.html">קרדיטים, רישיונות ומקורות</a></span>
@@ -44,7 +44,8 @@ for p,label,title,desc in PAGES:
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#0f2338">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚙%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/style.css">{head_extra}
+<link rel="stylesheet" href="assets/style.css">
+<link rel="expect" href="#site-footer" blocking="render">{head_extra}
 </head>
 <body>
 {header(p)}
