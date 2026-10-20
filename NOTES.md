@@ -16,7 +16,7 @@ Last updated: 2026-10-20 (Asia/Jerusalem).
 - Euro NCAP Tiggo 8: 1223ra reassessment 5★ (82/85/80/78), 15.10.2025; based on EU Tiggo 7/8.
 - Santa Fe NCAP 2024: 4★ standard / 5★ with safety pack. Carnival, Tiggo 9, Jaecoo 8: no Euro NCAP rating.
 - MIFA 7 has more than one importer; official Maxus price list 3.6.2026 used, others noted.
-- Santa Fe Luxury and Ioniq 9 fee-inclusive prices not published → shown as list price only.
+- Fee-inclusive prices for Santa Fe Luxury / Ioniq 9 taken from hyundaimotors.co.il/prices (re-checked 21.10.2026).
 
 ## Images
 - All side photos are official manufacturer/importer images (MG UK brochure, kia-israel, hyundaimotors.co.il, umimaxus, cheryisrael) or manufacturer press images via ZigWheels (Jaecoo 8, Tiggo 9). Watermarked images (CARICOS, BitAuto) from the earlier prototype were dropped.
@@ -38,3 +38,4 @@ Last updated: 2026-10-20 (Asia/Jerusalem).
 - 2026-10-21 00:45: fixed dynamic import path (`./viewer3d-gl.js` relative to script), portrait iso camera (binary-search fit + dynamic fog — mobile 3D was blank because camera was beyond fog/far plane), search box moved out of collapsible filters. Playwright: 20 runs, 0 console errors, 0 failed requests, 0 overflow, 8/8 models on mobile+desktop.
 - Privacy scan script: `/workspace/cars-7seat-audit/scripts/privacy_scan.py` (tokens from private sheet rows + patterns) — run before each push.
 - 2026-10-21 01:00: build.py now inlines data/media/page scripts (CLS 0 on all pages locally); pair/ghost-only viewer controls start hidden. Playwright 20/20 clean.
+- 2026-10-21 01:10: link check of 63 external URLs; fixed Maxus (no www), Hyundai price list (/prices) and Ioniq 9 page URLs; added Hyundai fee-inclusive prices.

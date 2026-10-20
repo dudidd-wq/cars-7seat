@@ -19,7 +19,7 @@ window.MEDIA={
   },
   "ioniq9": {
    "src": "יונדאי ישראל / כלמוביל (hyundaimotors.co.il) — תמונת צד רשמית",
-   "url": "https://www.hyundaimotors.co.il/models/ioniq-9",
+   "url": "https://www.hyundaimotors.co.il/models/ioniq9/",
    "kind": "official",
    "w": 532,
    "h": 193,
