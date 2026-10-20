@@ -1,0 +1,35 @@
+<h1>השוואת רכבי 7 מקומות — אוקטובר 2026</h1>
+<p class="lead">שמונה רכבים משפחתיים עם 7 מושבים ומעלה הנמכרים חדשים בישראל:
+MG S9, צ'רי טיגו 8 פרו, צ'רי טיגו 9 פרו, ג'אקו 8, מקסוס MIFA 7, יונדאי סנטה פה היברידית, קיה קרניבל היברידית ויונדאי איוניק 9.
+הנתונים ציבוריים בלבד, ולכל נתון מצוין מקור.</p>
+
+<div class="grid cols-2">
+  <a class="card tile" href="specs.html">
+    <img src="img/preview-specs.webp" width="800" height="450" alt="תצוגה מקדימה של טבלת המפרט">
+    <h2>טבלת מפרט ומחירים</h2>
+    <p>מיון וסינון לפי מידות, מושבים ושורה שלישית, הנעה, הספק, טווח וצריכה, תא מטען, מחיר מחירון, Euro NCAP וביקורות.</p>
+  </a>
+  <a class="card tile" href="photos.html">
+    <img src="img/preview-photos.webp" width="800" height="450" alt="שורת תמונות צד של שמונת הרכבים בקנה מידה אחיד">
+    <h2>תמונות בקנה מידה</h2>
+    <p>תמונות צד רשמיות בקנה מידה אחיד: שורה, חפיפה בין שני רכבים, מבט חזית סכמטי ועמודות מידות.</p>
+  </a>
+  <a class="card tile" href="viewer3d.html">
+    <img src="img/preview-3d.webp" width="800" height="450" alt="מודלים תלת־ממדיים של הרכבים זה לצד זה">
+    <h2>מודלים בתלת־ממד</h2>
+    <p>שישה מודלים מ־Sketchfab ‏(CC BY 4.0) בקנה מידה לפי מידות היצרן, עם מצלמות צד, חזית ומעל. המודלים נטענים רק לפי בקשה.</p>
+  </a>
+  <a class="card tile" href="credits.html">
+    <img src="img/preview-credits.webp" width="800" height="450" alt="רשימת קרדיטים ומקורות">
+    <h2>קרדיטים, רישיונות ומקורות</h2>
+    <p>ייחוס למודלים (CC BY 4.0), מקורות התמונות, מקורות הנתונים ותאריך עדכון.</p>
+  </a>
+</div>
+
+<section class="card" style="margin-top:1rem" aria-labelledby="corr">
+  <h2 id="corr" style="margin-top:0">תיקונים מול גיליון המחקר</h2>
+  <ul class="plain" id="corrections"></ul>
+  <p class="note">כל הנתונים נבדקו מול אתרי היבואנים והיצרנים ומול Euro NCAP ב־20.10.2026. מחיר = מחיר מחירון לצרכן, לא הצעה אישית.</p>
+</section>
+<script src="assets/data.js"></script>
+<script>document.getElementById('corrections').innerHTML=SITE.corrections.map(function(c){return '<li>'+c+'</li>'}).join('');</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>טבלת מפרט והשוואה — רכבי 7 מקומות</title>
+<meta name="description" content="טבלה ניתנת למיון וסינון: מידות, מושבים, הנעה, הספק, טווח וצריכה, תא מטען, מחיר מחירון, Euro NCAP וביקורות — עם מקורות.">
+<meta name="theme-color" content="#0f2338">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚙%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./">🚙 השוואת רכבי 7 מקומות</a>
+<nav aria-label="ניווט ראשי"><ul class="nav"><li><a href="./">דף הבית</a></li><li><a href="specs.html" aria-current="page">טבלת מפרט</a></li><li><a href="photos.html">תמונות בקנה מידה</a></li><li><a href="viewer3d.html">תלת־ממד</a></li><li><a href="credits.html">קרדיטים ומקורות</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap" tabindex="-1">
+<h1>טבלת מפרט והשוואה</h1>
+<p class="lead">לחצו על כותרת עמודה כדי למיין, או סננו לפי סוג הנעה, מרכב, מושבים ומחיר. במובייל הנתונים מוצגים ככרטיסים.
+<span id="priceNote"></span></p>
+
+<form class="controls" id="filters" role="search" aria-label="סינון הטבלה" onsubmit="return false">
+  <label>חיפוש
+    <input type="search" id="q" placeholder="שם דגם…" autocomplete="off">
+  </label>
+  <fieldset>
+    <legend>הנעה</legend>
+    <div class="chips" id="typeChips"></div>
+  </fieldset>
+  <label>מרכב
+    <select id="body"><option value="">הכול</option><option value="SUV">SUV</option><option value="MPV">מיניוואן</option></select>
+  </label>
+  <label>מחיר מקסימלי (₪)
+    <select id="maxPrice">
+      <option value="">ללא הגבלה</option>
+      <option value="200000">200,000</option>
+      <option value="230000">230,000</option>
+      <option value="260000">260,000</option>
+      <option value="350000">350,000</option>
+    </select>
+  </label>
+  <label>מיון (במובייל)
+    <select id="sortSel"></select>
+  </label>
+  <button type="button" id="reset">איפוס</button>
+</form>
+<p class="status" id="count" role="status" aria-live="polite"></p>
+
+<div class="table-wrap has-cards">
+<table id="tbl">
+  <caption class="sr-only">השוואת מפרט לרכבי 7 מקומות. לחיצה על כותרת ממיינת.</caption>
+  <thead><tr id="thead"></tr></thead>
+  <tbody id="tbody"></tbody>
+</table>
+</div>
+<div class="cards" id="cards"></div>
+
+<section aria-labelledby="notes-h">
+<h2 id="notes-h">הערות</h2>
+<ul class="plain note">
+  <li>מידות במ״מ: אורך × רוחב (ללא מראות) × גובה; בסיס גלגלים. תא מטען בליטרים: עם 7 מושבים / שורה 3 מקופלת / מקסימום (שיטות מדידה שונות בין יצרנים — VDA / SAE).</li>
+  <li>טווח חשמלי וצריכה לפי WLTP (נתוני היבואן או היצרן); טווח אמיתי נמוך יותר — ראו ביקורות.</li>
+  <li>Euro NCAP: ‏AOP = הגנה על נוסע מבוגר, COP = ילד, VRU = משתמשי דרך פגיעים, SA = מערכות סיוע. „לא נבדק” = אין דירוג Euro NCAP לדגם.</li>
+  <li>„טיגו 8 פרו” מופיע בשתי שורות (בנזין ו־PHEV), ולכן בטבלה 9 שורות ל־8 דגמים.</li>
+</ul>
+</section>
+<script src="assets/data.js"></script>
+<script src="assets/specs.js" defer></script>
+</main>
+<footer class="site-footer"><div class="wrap">
+<span>עודכן לאחרונה: <time datetime="2026-10-20">20.10.2026</time></span>
+<span>נתונים ציבוריים בלבד (יבואנים, יצרנים, Euro NCAP, ביקורות מקושרות). המחירים עשויים להשתנות — יש לאמת מול היבואן.</span>
+<span><a href="credits.html">קרדיטים, רישיונות ומקורות</a></span>
+</div></footer>
+</body>
+</html>

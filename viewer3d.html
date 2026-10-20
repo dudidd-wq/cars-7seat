@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מודלים בתלת־ממד בקנה מידה — רכבי 7 מקומות</title>
+<meta name="description" content="מודלים תלת־ממדיים (Sketchfab, CC BY 4.0) בקנה מידה לפי מידות היצרן.">
+<meta name="theme-color" content="#0f2338">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚙%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/three.module.min.js","three/addons/":"./vendor/three/addons/"}}</script>
+<link rel="modulepreload" href="vendor/three/three.module.min.js">
+
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="./">🚙 השוואת רכבי 7 מקומות</a>
+<nav aria-label="ניווט ראשי"><ul class="nav"><li><a href="./">דף הבית</a></li><li><a href="specs.html">טבלת מפרט</a></li><li><a href="photos.html">תמונות בקנה מידה</a></li><li><a href="viewer3d.html" aria-current="page">תלת־ממד</a></li><li><a href="credits.html">קרדיטים ומקורות</a></li></ul></nav>
+</div></header>
+<main id="main" class="wrap" tabindex="-1">
+<h1>מודלים בתלת־ממד בקנה מידה</h1>
+<p class="lead">שישה מודלים תלת־ממדיים מ־Sketchfab (רישיון CC BY 4.0) הותאמו בנפרד בכל ציר — אורך, רוחב (ללא מראות) וגובה — למידות היצרן. ל־MG S9 ולמקסוס MIFA 7 אין מודל ברישיון חופשי, ולכן הם מוצגים כ„לוח תמונה” (תמונת צד רשמית ומתאר חזית) בגודל אמיתי.
+גררו כדי לסובב, צבטו או גללו כדי להגדיל.</p>
+
+<div class="controls" role="group" aria-label="אפשרויות תצוגה">
+  <fieldset><legend>תצוגה</legend>
+    <div class="btn-group" id="modes">
+      <button type="button" data-m="lineup" aria-pressed="true">שורה</button>
+      <button type="button" data-m="pair" aria-pressed="false">זה לצד זה</button>
+      <button type="button" data-m="ghost" aria-pressed="false">חפיפה</button>
+    </div>
+  </fieldset>
+  <label>מצלמה <select id="cam"><option value="iso">אלכסון</option><option value="side">צד</option><option value="front">חזית</option><option value="top">מלמעלה</option></select></label>
+  <label class="pr">רכב א׳ <select id="carA"></select></label>
+  <label class="pr">רכב ב׳ <select id="carB"></select></label>
+  <label class="gh">שקיפות רכב ב׳ <input type="range" id="op" min="15" max="95" value="45"> <output id="opV">45%</output></label>
+  <label><span><input type="checkbox" id="dims" checked> תוויות מידות</span></label>
+  <label><span><input type="checkbox" id="grid" checked> רשת 1 מ׳</span></label>
+</div>
+
+<div class="viewer" id="viewer">
+  <canvas id="view" aria-label="מציג תלת־ממד של הרכבים" role="img"></canvas>
+  <div class="overlay" id="overlay">
+    <p style="margin:0;font-size:1.05rem"><b>המודלים לא נטענו עדיין</b></p>
+    <p class="small" style="margin:0;color:#c9d6e3">גודל ההורדה כ־8.3MB לכל 6 המודלים. במצב „זה לצד זה” נטענים רק שני הרכבים שנבחרו.</p>
+    <button type="button" id="loadBtn" class="on">טען מודלים תלת־ממד</button>
+    <div class="progress" aria-hidden="true"><div id="bar"></div></div>
+    <p class="status" id="status" role="status" aria-live="polite" style="color:#9fd0ff;margin:0"></p>
+  </div>
+</div>
+<div class="legend" id="legend"></div>
+
+<h2>קנה מידה ומידות</h2>
+<div class="table-wrap">
+<table>
+  <caption class="sr-only">מידות היעד של כל מודל ומקור המודל</caption>
+  <thead><tr><th scope="col">דגם</th><th scope="col">סוג</th><th scope="col">אורך</th><th scope="col">רוחב</th><th scope="col">גובה</th><th scope="col">בסיס גלגלים</th><th scope="col">מודל (ייחוס CC BY 4.0)</th></tr></thead>
+  <tbody id="tbl"></tbody>
+</table>
+</div>
+<p class="note">המודלים הם יצירות של אמני Sketchfab ולא מודלים רשמיים של היצרנים, ולכן פרטים (חישוקים, פנסים, גרסה) עשויים להיות שונים מהדגם הישראלי. מודל הטיגו 8 פרו הוא של שנת 2023, לפני מתיחת הפנים. שינויים שבוצעו במודלים: שינוי קנה מידה בכל ציר, יישור לקרקע, דחיסה (meshopt/WebP) ותיקון חומרים.
+המידות שבטבלה הן מידות היצרן. קנה המידה מחושב מחדש בזמן הטעינה, כולל התיקון לגובה הקרניבל (1,785 מ״מ).</p>
+<script src="assets/data.js"></script>
+<script src="assets/media.js"></script>
+<script type="module" src="assets/viewer3d.js"></script>
+</main>
+<footer class="site-footer"><div class="wrap">
+<span>עודכן לאחרונה: <time datetime="2026-10-20">20.10.2026</time></span>
+<span>נתונים ציבוריים בלבד (יבואנים, יצרנים, Euro NCAP, ביקורות מקושרות). המחירים עשויים להשתנות — יש לאמת מול היבואן.</span>
+<span><a href="credits.html">קרדיטים, רישיונות ומקורות</a></span>
+</div></footer>
+</body>
+</html>

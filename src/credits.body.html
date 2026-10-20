@@ -1,0 +1,47 @@
+<h1>קרדיטים, רישיונות ומקורות</h1>
+<p class="lead">עודכן לאחרונה: <time datetime="2026-10-20">20.10.2026</time>. כל הנתונים באתר ציבוריים: אתרי יבואנים ויצרנים, Euro NCAP וביקורות שפורסמו. האתר אינו מסחרי ואינו קשור ליצרנים או ליבואנים.</p>
+
+<section class="card" aria-labelledby="h3d">
+<h2 id="h3d" style="margin-top:0">מודלים תלת־ממדיים — Creative Commons Attribution 4.0</h2>
+<p class="small">המודלים הבאים מופיעים בעמוד <a href="viewer3d.html">התלת־ממד</a> בהתאם לרישיון <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+<b>שינויים שבוצעו:</b> שינוי קנה מידה בכל ציר לפי מידות היצרן, יישור וסיבוב, דחיסת גאומטריה וטקסטורות (meshopt ו־WebP) ותיקון חומרים (בסנטה פה הוחלף צבע הגוף לאפור אחיד).</p>
+<ul class="credit-list" id="models3d"></ul>
+</section>
+
+<section class="card" style="margin-top:1rem" aria-labelledby="hph">
+<h2 id="hph" style="margin-top:0">תמונות הרכבים</h2>
+<p class="small">התמונות בעמוד <a href="photos.html">תמונות בקנה מידה</a> ובלוחות התמונה בתלת־ממד הן תמונות רשמיות של יצרנים ויבואנים (חומרי שיווק ועיתונות). הן מוצגות לצורך השוואה בלבד, ללא סימני מים, וכל הזכויות בהן שמורות לבעליהן. בכל התמונות הוסר הרקע ובוצעו חיתוך והקטנה. תמונות שנשאו סימני מים של אתרים מסחריים הוחלפו.</p>
+<ul class="credit-list" id="photoList"></ul>
+</section>
+
+<section class="card" style="margin-top:1rem" aria-labelledby="hsrc">
+<h2 id="hsrc" style="margin-top:0">מקורות הנתונים</h2>
+<ul class="credit-list" id="srcList"></ul>
+<p class="small">דירוגי בטיחות: <a href="https://www.euroncap.com/" target="_blank" rel="noopener">Euro NCAP</a>. בסיס הנתונים הוא גיליון מחקר, וכל המפרטים, המחירים והדירוגים נבדקו מחדש מול המקורות ב־20.10.2026. תקצירי הביקורות מנוסחים מחדש וכוללים קישור למקור.</p>
+</section>
+
+<section class="card" style="margin-top:1rem" aria-labelledby="hcode">
+<h2 id="hcode" style="margin-top:0">תוכנה</h2>
+<ul class="credit-list">
+  <li><a href="https://threejs.org/" target="_blank" rel="noopener">three.js</a> r160 — רישיון MIT (כולל GLTFLoader, OrbitControls, RoomEnvironment ו־meshoptimizer decoder ‏(MIT)). הקבצים נמצאים בתיקייה <code>vendor/three</code>.</li>
+  <li>הסרת רקע מתמונות: <a href="https://github.com/danielgatis/rembg" target="_blank" rel="noopener">rembg</a> (MIT), הרצה מקומית.</li>
+</ul>
+</section>
+
+<section class="card" style="margin-top:1rem" aria-labelledby="hpriv">
+<h2 id="hpriv" style="margin-top:0">פרטיות והבהרות</h2>
+<p class="small">האתר אינו אוסף מידע, ואין בו עוגיות, אנליטיקה או טפסים. הוא כולל רק נתונים שפורסמו לציבור, ללא הצעות מחיר אישיות. המחירים הם מחירי מחירון לצרכן ועשויים להשתנות. לפני רכישה יש לבדוק את המפרט, המחיר והאבזור מול היבואן.</p>
+</section>
+<script src="assets/data.js"></script>
+<script src="assets/media.js"></script>
+<script>
+(function(){
+var byId={};SITE.cars.forEach(function(c){byId[c.id]=c;});
+document.getElementById('models3d').innerHTML=MEDIA.models.map(function(m){return '<li><b>'+byId[m.id].short+':</b> „<a href="'+m.model_url+'" target="_blank" rel="noopener">'+m.title+'</a>” מאת <a href="'+m.author_url+'" target="_blank" rel="noopener">'+m.author+'</a>, ‏Sketchfab — רישיון <a href="'+m.license_url+'" target="_blank" rel="noopener">'+m.license+'</a>. שונה.</li>';}).join('');
+document.getElementById('photoList').innerHTML=Object.keys(MEDIA.photos).map(function(id){var p=MEDIA.photos[id];return '<li><b>'+byId[id].short+':</b> <a href="'+p.url+'" target="_blank" rel="noopener">'+p.src+'</a></li>';}).join('');
+document.getElementById('srcList').innerHTML=SITE.cars.map(function(c){
+  var l=c.specSrc.concat([[c.priceSrc.label+' ('+c.priceSrc.date+')',c.priceSrc.url]]);
+  if(c.ncap.url&&c.ncap.stars)l.push(['Euro NCAP '+c.ncap.year,c.ncap.url]);
+  return '<li><b>'+c.name+':</b> '+l.map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+x[0]+'</a>';}).join(' · ')+'</li>';}).join('');
+})();
+</script>
