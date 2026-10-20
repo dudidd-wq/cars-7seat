@@ -37,3 +37,4 @@ Last updated: 2026-10-20 (Asia/Jerusalem).
 - Fix in progress (2026-10-21 00:0x): scripts made synchronous right after their containers (no CLS); three.js split into lazily imported `assets/viewer3d-gl.js` (loaded only on "טען מודלים" click / `#autoload=1`).
 - 2026-10-21 00:45: fixed dynamic import path (`./viewer3d-gl.js` relative to script), portrait iso camera (binary-search fit + dynamic fog — mobile 3D was blank because camera was beyond fog/far plane), search box moved out of collapsible filters. Playwright: 20 runs, 0 console errors, 0 failed requests, 0 overflow, 8/8 models on mobile+desktop.
 - Privacy scan script: `/workspace/cars-7seat-audit/scripts/privacy_scan.py` (tokens from private sheet rows + patterns) — run before each push.
+- 2026-10-21 01:00: build.py now inlines data/media/page scripts (CLS 0 on all pages locally); pair/ghost-only viewer controls start hidden. Playwright 20/20 clean.

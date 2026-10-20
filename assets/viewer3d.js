@@ -32,7 +32,7 @@ let glMod=null, booting=null;
 async function boot(){
   if(!booting){
     $('loadBtn').disabled=true; $('status').textContent='טוען את מנוע התלת־ממד…';
-    booting=import('./viewer3d-gl.js').then(m=>{glMod=m; return m.boot({CARS,state,syncUI,MM,nf});})
+    booting=import('./assets/viewer3d-gl.js').then(m=>{glMod=m; return m.boot({CARS,state,syncUI,MM,nf});})
       .catch(e=>{console.error(e); $('status').textContent='שגיאה בטעינת מנוע התלת־ממד: '+(e.message||e); $('loadBtn').disabled=false; booting=null;});
   }
   return booting;

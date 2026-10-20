@@ -53,9 +53,480 @@
   <tbody id="ptbl"></tbody>
 </table>
 </div>
-<script src="assets/data.js"></script>
-<script src="assets/media.js"></script>
-<script src="assets/photos.js"></script>
+<script>/* assets/data.js */
+/* נתוני השוואה — מקור: גיליון המחקר (נתונים ציבוריים בלבד) + אימות מול אתרי יבואן/יצרן, Euro NCAP. נבדק 20.10.2026 */
+window.SITE = {
+  updated: "20.10.2026",
+  priceNote: "מחיר מחירון לצרכן בש״ח כפי שפורסם באתר היבואן (נבדק 20.10.2026). \"כולל אגרה\" = כולל אגרת רישוי שנה ראשונה, כשפורסם. מחירים משתנים — יש לאמת מול היבואן.",
+  cars: [
+  {
+    id:"mgs9", name:"MG S9 PHEV", short:"MG S9", color:"#c9a227", type:"PHEV", body:"SUV",
+    importer:"MG ישראל",
+    L:4983, W:1967, H:1778, WB:2915, dimNote:"רוחב ללא מראות; גובה כולל מסילות גג",
+    seats:7, layout:"2-3-2", row3:"שורה 3 מתאימה למבוגרים עד כ־1.80 מ׳ (Carwow); אין ISOFIX בשורה 3", row3Score:3,
+    powertrain:"1.5 טורבו + מנוע חשמלי, היברידי נטען, הנעה קדמית",
+    hp:299, hpNote:"299 כ״ס (220 קו״ט) משולב — מנוע בנזין 142 כ״ס + מנוע חשמלי 231 כ״ס. (בגיליון נרשם בטעות ~231 = הספק המנוע החשמלי בלבד)",
+    zeroTo100:9.6,
+    battery:24.7, evRange:100, consumption:null, energy:"טווח חשמלי 100 ק״מ WLTP · סוללה 24.7 קוט״ש LFP",
+    dc:null, dcNote:"טעינת AC בלבד — אין טעינה מהירה DC",
+    boot7:332, boot5:1026, bootMax:2093,
+    trims:[{t:"Comfort",p:189888,pf:192674},{t:"Luxury",p:198888,pf:201674}],
+    priceSrc:{label:"מחירון MG ישראל", url:"https://mg-israel.co.il/pricelist/mgs9/", date:"20.10.2026"},
+    ncap:{stars:5, year:2025, aop:84, cop:85, vru:74, sa:77, url:"https://www.euroncap.com/assessments/mg/mgs9+phev/1203/"},
+    reviewsIL:{text:"תמורה גבוהה למחיר, 7 מושבים אמיתיים ונסיעה שקטה; מתלים קשיחים ורעשי רוח. בדיקות טווח חשמלי בפועל: כ־75–92 ק״מ.",
+      links:[["אוטו","https://www.auto.co.il/cars/mg/mgs9/"],["iCar מבחן דרכים","https://www.icar.co.il/test_drive/b1hlutvuzg/"],["וואלה! רכב","https://cars.walla.co.il/item/3826484/"]]},
+    reviewsIntl:{text:"Carwow ומגזינים בריטיים: שקט ומרווח, שורה 3 שימושית למבוגרים; חסרון בולט — אין טעינת DC, ומנוע הבנזין רועש בהאצות כשהסוללה ריקה.",
+      links:[["Carwow","https://www.carwow.co.uk/mg/s9"]]},
+    issues:"אין DC; אין ISOFIX בשורה 3; דגם חדש — היסטוריית אמינות קצרה.",
+    specSrc:[["חוברת MG S9 PHEV (MG UK, יוני 2026)","https://www.mg.co.uk/sites/default/files/2026-06/MGS9_Brochure_June_2026.pdf"],["MG ישראל","https://mg-israel.co.il/mgs9/"]]
+  },
+  {
+    id:"tiggo8", name:"צ'רי טיגו 8 פרו (בנזין)", short:"טיגו 8 פרו", color:"#f08cb4", type:"ICE", body:"SUV",
+    importer:"צ'רי ישראל",
+    L:4720, W:1860, H:1705, WB:2710, dimNote:"",
+    seats:7, layout:"2-3-2 (5+2)", row3:"שורה 3 מתאימה בעיקר לילדים", row3Score:1,
+    powertrain:"1.6 טורבו בנזין, תיבת DCT, הנעה קדמית",
+    hp:200, hpNote:"היבואן מציג \"147/5,000\" בעמודת כ״ס; זה ערך בקילוואט — 147 קו״ט ≈ 200 כ״ס",
+    zeroTo100:null,
+    battery:null, evRange:null, consumption:7.8, energy:"7.8 ל׳/100 ק״מ WLTP (≈12.8 ק״מ לליטר)",
+    dc:null, dcNote:"—",
+    boot7:193, boot5:1179, bootMax:null,
+    trims:[{t:"Comfort",p:179990,pf:182440},{t:"Noble",p:189990,pf:192776},{t:"Ultimate",p:192990,pf:195776}],
+    priceSrc:{label:"מחירון צ'רי ישראל", url:"https://cheryisrael.co.il/pricing/", date:"20.10.2026"},
+    ncap:{stars:5, year:2025, aop:82, cop:85, vru:80, sa:78, url:"https://www.euroncap.com/assessments/chery/tiggo+8/1223ra/", note:"דירוג \"Chery Tiggo 8\" האירופי (נבדק על בסיס טיגו 7/8 אירופי; דורג 4★ ביולי 2025 ועודכן ל־5★ ב־15.10.2025). ייתכנו הבדלים מהגרסה הישראלית."},
+    reviewsIL:{text:"מאובזר ובמחיר נמוך יחסית; שורה 3 (5+2) לילדים.", links:[["אוטו","https://www.auto.co.il/cars/chery/tiggo-8-pro/"]]},
+    reviewsIntl:{text:"What Car (Tiggo 8): מחיר ואבזור אטרקטיביים; מתחרים נוחים ומהנים יותר לנהיגה.", links:[["What Car","https://www.whatcar.com/chery/tiggo-8/estate/review/n28158"]]},
+    issues:"תלונות על הנדסת אנוש ומתגים; אין דיווח שיטתי על תקלות מנוע.",
+    specSrc:[["מפרט טכני טיגו 8 פרו (צ'רי ישראל)","https://cheryisrael.co.il/TechSpecs/Chery-Tiggo8-Brochure.pdf"]]
+  },
+  {
+    id:"tiggo8phev", model3d:"tiggo8", photo:"tiggo8", name:"צ'רי טיגו 8 פרו PHEV", short:"טיגו 8 פרו PHEV", color:"#e05a9a", type:"PHEV", body:"SUV",
+    importer:"צ'רי ישראל",
+    L:4725, W:1860, H:1705, WB:2710, dimNote:"",
+    seats:7, layout:"2-3-2 (5+2)", row3:"שורה 3 לילדים", row3Score:1,
+    powertrain:"1.5 טורבו + מנוע חשמלי (DHT), היברידי נטען, הנעה קדמית",
+    hp:null, hpText:"143 + 204", hpNote:"מנוע בנזין 143 כ״ס + מנוע חשמלי 204 כ״ס; היבואן אינו מפרסם הספק משולב (הסכום ~347 בגיליון אינו נתון רשמי)",
+    zeroTo100:9.0,
+    battery:18.3, evRange:90, consumption:2.5, energy:"טווח חשמלי 90 ק״מ WLTP · 2.5 ל׳/100 ק״מ משוקלל · סוללה 18.3 קוט״ש",
+    dc:40, dcNote:"AC 6.6 / DC 40 קו״ט",
+    boot7:193, boot5:1179, bootMax:null,
+    trims:[{t:"Comfort",p:189990,pf:192776},{t:"Noble",p:199990,pf:202776},{t:"Ultimate",p:204990,pf:207776}],
+    priceSrc:{label:"מחירון צ'רי ישראל", url:"https://cheryisrael.co.il/pricing/", date:"20.10.2026"},
+    ncap:{stars:5, year:2025, aop:82, cop:85, vru:80, sa:78, url:"https://www.euroncap.com/assessments/chery/tiggo+8/1223ra/", note:"דירוג \"Chery Tiggo 8\" האירופי (הרכב שנבדק: טיגו 7 PHEV). ייתכנו הבדלים מהגרסה הישראלית."},
+    reviewsIL:{text:"וואלה! (14.3.2025): 8/10 — אבזור, ביצועים, צריכה ומחיר; חולשות: הנדסת אנוש, שורה 3 לילדים, התנהגות כביש. טווח חשמלי בפועל כ־65–70 ק״מ.",
+      links:[["וואלה! רכב","https://cars.walla.co.il/item/3734016"],["iCar","https://www.icar.co.il/test_drive/rj86tf9eel/"],["פלאגמג","https://www.plugmag.co.il/chery-tiggo-8-pro-phev-2025-review/"]]},
+    reviewsIntl:{text:"What Car (Tiggo 8): תמורה טובה כ־PHEV; מעשיות ונהיגה פחות טובות מהמתחרים האירופיים.", links:[["What Car","https://www.whatcar.com/chery/tiggo-8/estate/review/n28158"]]},
+    issues:"PHEV חדש יחסית בישראל (2025) — היסטוריית בעלים מוגבלת.",
+    specSrc:[["חוברת טיגו 8 פרו PHEV (צ'רי ישראל)","https://cheryisrael.co.il/models/tiggo8pro-phev/"]]
+  },
+  {
+    id:"tiggo9", name:"צ'רי טיגו 9 פרו PHEV", short:"טיגו 9 פרו", color:"#2fb8ad", type:"PHEV", body:"SUV",
+    importer:"צ'רי ישראל",
+    L:4810, W:1925, H:1741, WB:2800, dimNote:"",
+    seats:7, layout:"2-3-2", row3:"שורה 3 לילדים/מבוגרים קצרים (לפי ביקורות על התאום ג'אקו 8)", row3Score:2,
+    powertrain:"1.5 טורבו + 2 מנועים חשמליים (FWD) / 3 מנועים (AWD), היברידי נטען",
+    hp:306, hpText:"306 / ≈428", hpNote:"Luxury FWD: ‏306 כ״ס משולב (143+102+122). Noble AWD: מוסיף מנוע אחורי 238 כ״ס; הספק משולב לא פורסם ע״י היבואן — ≈428 כ״ס כמו התאום ג'אקו 8",
+    zeroTo100:8.9, zeroNote:"FWD 8.9 / AWD 5.4",
+    battery:18.3, evRange:75, consumption:0.5, energy:"FWD: 75 ק״מ חשמלי, 0.5 ל׳/100, ‏18.3 קוט״ש · AWD: ‏148 ק״מ, 1.7 ל׳/100, ‏34.46 קוט״ש (WLTP, נתוני היבואן)",
+    dc:60.7, dcNote:"DC ‏60.7 (FWD) / 71 קו״ט (AWD)",
+    boot7:143, boot5:819, bootMax:2065,
+    trims:[{t:"Luxury FWD",p:217990,pf:220776},{t:"Noble AWD",p:244990,pf:248889}],
+    priceSrc:{label:"מחירון צ'רי ישראל", url:"https://cheryisrael.co.il/pricing/", date:"20.10.2026"},
+    ncap:{stars:null, note:"לא נבדק ב־Euro NCAP", url:"https://www.euroncap.com/en/ratings-rewards/latest-safety-ratings/"},
+    reviewsIL:{text:"אין עדיין מבחן מקיף בישראל; אוטו בחן את התאום הטכני ג'אקו 8 (אותה מערכת הנעה ב־AWD).", links:[["אוטו — מבחן ג'אקו 8","https://www.auto.co.il/articles/test-drives/road-tests/jaecoo-8-test-drive/"]]},
+    reviewsIntl:{text:"Autocar על ג'אקו 8 (פלטפורמה והנעה קרובות): PHEV שקט ומהיר; שורה 3 לילדים.", links:[["Autocar — Jaecoo 8","https://www.autocar.co.uk/car-review/jaecoo/8"]]},
+    issues:"חדש בישראל; לפי אוטו, בתאום ג'אקו 8 תוקן בעדכון תוכנה באג של ריקון סוללה נמוך.",
+    specSrc:[["חוברת טיגו 9 פרו PHEV (צ'רי ישראל)","https://cheryisrael.co.il/models/tiggo-9-phev/"],["oto.org.il (מצטט את היבואן)","https://www.oto.org.il/"]]
+  },
+  {
+    id:"jaecoo8", name:"ג'אקו 8 PHEV", short:"ג'אקו 8", color:"#e07a3d", type:"PHEV", body:"SUV",
+    importer:"כלמוביל",
+    L:4820, W:1930, H:1710, WB:2820, dimNote:"בסיס גלגלים לפי מפרט אירופי",
+    seats:7, layout:"2-3-2", row3:"שורה 3 לילדים", row3Score:1,
+    powertrain:"1.5 טורבו + 3 מנועים חשמליים, היברידי נטען, הנעה כפולה",
+    hp:428, hpNote:"428 כ״ס (315 קו״ט) משולב — לפי Jaecoo ספרד; החוברת הישראלית מפרטת מנוע 143 + מנועים 102/122/238",
+    zeroTo100:5.8,
+    battery:34.46, evRange:134, consumption:2.1, energy:"טווח חשמלי 134 ק״מ WLTP · 2.1 ל׳/100 · סוללה 34.46 קוט״ש",
+    dc:70, dcNote:"DC 70 קו״ט",
+    boot7:200, boot5:738, bootMax:2021,
+    trims:[{t:"Luxury",p:229900,pf:232686},{t:"Limited",p:254900,pf:258799}],
+    priceSrc:{label:"מחירון ג'אקו ישראל", url:"https://jaecoo.co.il/prices-list/", date:"20.10.2026"},
+    ncap:{stars:null, note:"לא נבדק ב־Euro NCAP", url:"https://www.euroncap.com/en/ratings-rewards/latest-safety-ratings/"},
+    reviewsIL:{text:"אוטו (2.12.2025): הרבה אבזור וכוח לשקל; טווח חשמלי במבחן כ־115 ק״מ (מול 134); שורה 3 לילדים; הנדסת אנוש מסורבלת; עדכון תוכנה תיקן זחילה בסוללה ריקה.",
+      links:[["אוטו","https://www.auto.co.il/articles/test-drives/road-tests/jaecoo-8-test-drive/"],["וואלה! רכב","https://cars.walla.co.il/item/3812706"],["פלאגמג","https://www.plugmag.co.il/jaecoo-8-phev-in-israel/"]]},
+    reviewsIntl:{text:"Autocar: שקט ומהיר, כיול מתלים רך; שורה 3 לילדים.", links:[["Autocar","https://www.autocar.co.uk/car-review/jaecoo/8"]]},
+    issues:"הושק בסוף 2025 — מעט היסטוריה; באג ניהול סוללה תוקן בעדכון תוכנה (לפי אוטו).",
+    specSrc:[["ג'אקו ישראל","https://jaecoo.co.il/models/jaecoo8/"],["Jaecoo ספרד — הספק משולב","https://www.omodajaecoo.es/"]]
+  },
+  {
+    id:"mifa7", name:"מקסוס MIFA 7 (חשמלי)", short:"מיפא 7", color:"#7c5cbf", type:"EV", body:"MPV",
+    importer:"מקסוס (UMI ויבואן נוסף)",
+    L:4907, W:1885, H:1756, WB:2975, dimNote:"גובה 1,756 (Luxury) / 1,768 (Premium)",
+    seats:7, layout:"2-2-3", row3:"מיניוואן — כניסה בדלתות הזזה; שורה 3 מרווחת יחסית", row3Score:3,
+    powertrain:"מנוע חשמלי יחיד, הנעה קדמית",
+    hp:245, hpNote:"245 כ״ס",
+    zeroTo100:8.7,
+    battery:77, evRange:410, consumption:null, energy:"Luxury: 77 קוט״ש, 410 ק״מ · Premium LR: 90 קוט״ש, 480 ק״מ (WLTP)",
+    dc:130, dcNote:"AC 11 / DC 130 קו״ט",
+    boot7:280, boot5:760, bootMax:null,
+    trims:[{t:"Luxury 77kWh",p:218990,pf:221776},{t:"Premium Long Range 90kWh",p:249990,pf:253889}],
+    priceSrc:{label:"מחירון MAXUS (בתוקף מ־3.6.2026)", url:"https://www.maxusofficial.co.il/", date:"3.6.2026", note:"יותר מיבואן אחד: באתר UMI מופיע \"החל מ־202,987\", ובאוטו מופיעים 212,900 (אוטו חן) ו־214,990 (UMI). מומלץ לבדוק מול כל יבואן."},
+    ncap:{stars:5, year:2024, aop:92, cop:87, vru:81, sa:75, url:"https://www.euroncap.com/assessments/maxus/mifa-7/1060/"},
+    reviewsIL:{text:"אוטו: מרווח, אבזור ובטיחות; טווח מעשי כ־360 ק״מ (כ־400 בנהיגה רגועה); טעינת DC בפועל כ־110 קו״ט.",
+      links:[["אוטו","https://www.auto.co.il/articles/test-drives/road-tests/137870/"],["וואלה! רכב","https://cars.walla.co.il/item/3716166"],["אוטומג","https://www.automag.co.il/maxus-mifa-7-review-israel/"]]},
+    reviewsIntl:{text:"דירוג Euro NCAP גבוה במיוחד בהגנת נוסעים (92%). ביקורות אירופיות עוסקות בעיקר באח הגדול MIFA 9.", links:[["Euro NCAP","https://www.euroncap.com/assessments/maxus/mifa-7/1060/"]]},
+    issues:"מותג חדש יחסית בישראל — כדאי לבדוק שירות וחלפים.",
+    specSrc:[["UMI מקסוס — מפרט MIFA 7","https://www.umimaxus.co.il/"]]
+  },
+  {
+    id:"santafe", name:"יונדאי סנטה פה היברידית", short:"סנטה פה", color:"#2bb673", type:"HEV", body:"SUV",
+    importer:"כלמוביל",
+    L:4830, W:1900, H:1770, WB:2815, dimNote:"",
+    seats:7, layout:"2-3-2", row3:"שורה 3 צפופה (Car and Driver)", row3Score:2,
+    powertrain:"1.6 טורבו היברידי (לא נטען), תיבה אוטומטית 6 הילוכים, הנעה קדמית",
+    hp:238, hpNote:"238 כ״ס משולב (חוברת היבואן)",
+    zeroTo100:null,
+    battery:null, evRange:null, consumption:6.7, energy:"6.7–6.8 ל׳/100 ק״מ",
+    dc:null, dcNote:"—",
+    boot7:null, boot5:628, bootMax:1949, bootNote:"נפח עם 7 מושבים לא פורסם ע״י היבואן",
+    trims:[{t:"Luxury",p:319990,pf:null},{t:"Ultimate",p:329990,pf:333889},{t:"Excellence",p:359990,pf:365489}],
+    priceSrc:{label:"מחירון יונדאי ישראל", url:"https://www.hyundaimotors.co.il/price-list", date:"20.10.2026"},
+    ncap:{stars:4, year:2024, aop:84, cop:88, vru:70, sa:69, url:"https://www.euroncap.com/assessments/hyundai/santa+fe/1078/", note:"4★ בציוד סטנדרטי; 5★ עם חבילת בטיחות (VRU 77, SA 79)"},
+    reviewsIL:{text:"מרווח, מערכת היברידית חזקה.", links:[["אוטו","https://www.auto.co.il/cars/hyundai/santa-fe/"]]},
+    reviewsIntl:{text:"Car and Driver ‏(9/10): עיצוב ייחודי, צריכה טובה, אבזור נדיב; האצה איטית, כביש לא מלהיב, שורה 3 צפופה.", links:[["Car and Driver","https://www.caranddriver.com/hyundai/santa-fe-hybrid-2026"]]},
+    issues:"דור חדש — היסטוריה קצרה.",
+    specSrc:[["חוברת סנטה פה היברידית (יונדאי ישראל)","https://www.hyundaimotors.co.il/models/santa-fe-hybrid"]]
+  },
+  {
+    id:"carnival", name:"קיה קרניבל היברידית", short:"קרניבל", color:"#e85d4c", type:"HEV", body:"MPV",
+    importer:"טלקאר",
+    L:5155, W:1995, H:1785, WB:3090, dimNote:"גובה 1,785 לפי היבואן (בגיליון: 1,775)",
+    seats:8, layout:"2-3-3", row3:"מיניוואן גדול — שורה 3 למבוגרים; Car and Driver הכניס 14 מזוודות טרולי מאחורי שורה 3 (גרסת V6)", row3Score:3,
+    powertrain:"1.6 טורבו היברידי (לא נטען), הנעה קדמית",
+    hp:245, hpNote:"245 כ״ס משולב (קיה ישראל)",
+    zeroTo100:null,
+    battery:null, evRange:null, consumption:7.1, energy:"7.1 ל׳/100 ק״מ",
+    dc:null, dcNote:"—",
+    boot7:627, boot5:1665, bootMax:2827, bootNote:"נפח מאחורי שורה 3 (8 מושבים)",
+    trims:[{t:"EX",p:339900,pf:343799},{t:"Premium",p:349900,pf:355399}],
+    priceSrc:{label:"קיה ישראל", url:"https://kia-israel.co.il/", date:"20.10.2026", note:"גרסת בנזין 3.5 מתחילה ב־298,900 ₪"},
+    ncap:{stars:null, note:"לא נבדק ב־Euro NCAP", url:"https://www.euroncap.com/en/ratings-rewards/latest-safety-ratings/"},
+    reviewsIL:{text:"המיניוואן המרווח בקבוצה.", links:[["אוטו","https://www.auto.co.il/cars/kia/carnival/"]]},
+    reviewsIntl:{text:"Car and Driver ‏(9/10, Editors' Choice): ההיברידית שומרת על המעשיות, הנוחות והעידון של גרסת הבנזין עם צריכה טובה יותר; חסרונות: אין הנעה כפולה, מושבי ה־VIP בשורה 2 אינם נשלפים.", links:[["Car and Driver","https://www.caranddriver.com/kia/carnival-2025"]]},
+    issues:"דור היברידי חדש יחסית.",
+    specSrc:[["מפרט קרניבל (קיה ישראל)","https://kia-israel.co.il/"]]
+  },
+  {
+    id:"ioniq9", name:"יונדאי איוניק 9 (חשמלי)", short:"איוניק 9", color:"#3d9cf0", type:"EV", body:"SUV",
+    importer:"כלמוביל",
+    L:5060, W:1980, H:1790, WB:3130, dimNote:"",
+    seats:7, layout:"2-3-2 (Excellence) / 2-2-2 (Calligraphy)", row3:"שורה 3 שמישה; Car and Driver: 6 מזוודות טרולי מאחורי שורה 3", row3Score:3,
+    powertrain:"חשמלי — מנוע אחורי (RWD) או שני מנועים (AWD)",
+    hp:214, hpText:"214 / 422", hpNote:"Excellence RWD ‏214 כ״ס · Calligraphy AWD ‏422 כ״ס",
+    zeroTo100:null,
+    battery:110.3, evRange:620, consumption:null, energy:"סוללה 110.3 קוט״ש · RWD עד 620 ק״מ / AWD עד 600 ק״מ (WLTP)",
+    dc:350, dcNote:"DC עד 350 קו״ט · 10–80% ב־24 דק׳",
+    boot7:338, boot5:908, bootMax:2419, bootNote:"תא מטען קדמי 88 (RWD) / 52 (AWD) ל׳",
+    trims:[{t:"Excellence RWD (7 מושבים)",p:354990,pf:null},{t:"Calligraphy AWD (6 מושבים)",p:409990,pf:null}],
+    priceSrc:{label:"מחירון יונדאי ישראל", url:"https://www.hyundaimotors.co.il/price-list", date:"20.10.2026"},
+    ncap:{stars:5, year:2025, aop:84, cop:87, vru:77, sa:83, url:"https://www.euroncap.com/assessments/hyundai/ioniq+9/1157/"},
+    reviewsIL:{text:"אין עדיין מבחן דרכים מקיף בגיליון.", links:[["אוטו","https://www.auto.co.il/cars/hyundai/ioniq-9/"]]},
+    reviewsIntl:{text:"Car and Driver ‏(9.5/10, Editors' Choice): תא נוסעים שקט מאוד, מרווח לאנשים ולמטען; חסרונות: חלק מהחומרים, פער מחיר גבוה מול פאליסייד.", links:[["Car and Driver","https://www.caranddriver.com/hyundai/ioniq-9-2026"]]},
+    issues:"דגם חדש — אין עדיין היסטוריה בישראל.",
+    specSrc:[["חוברת איוניק 9 (יונדאי ישראל)","https://www.hyundaimotors.co.il/models/ioniq-9"]]
+  }
+  ],
+  corrections:[
+    "MG S9: הספק משולב 299 כ״ס (220 קו״ט) — לא ~231 כ״ס (231 הוא הספק המנוע החשמלי בלבד).",
+    "קיה קרניבל: גובה 1,785 מ״מ לפי קיה ישראל (בגיליון ובמודל התלת־ממד המקורי: 1,775).",
+    "צ'רי טיגו 9 פרו: תא מטען 143 ל׳ עם 7 מושבים (בגיליון: ~193–200); טווח חשמלי 75/148 ק״מ אומת מול היבואן.",
+    "צ'רי טיגו 8 פרו בנזין: \"147\" במפרט היבואן הוא קילוואט (≈200 כ״ס), לא כוחות סוס.",
+    "צ'רי טיגו 8 פרו PHEV: אין הספק משולב רשמי — הצגנו 143+204 כ״ס במקום הסכום ~347.",
+    "Euro NCAP לטיגו 8: דורג מחדש ל־5★ ב־15.10.2025 (במקור 4★, יולי 2025); מבוסס על הדגם האירופי.",
+    "מקסוס MIFA 7: מחירון רשמי 218,990/249,990 ₪ (3.6.2026); קיימים יבואנים נוספים במחירים שונים."
+  ]
+};
+</script>
+<script>/* assets/media.js */
+/* מקורות תמונות ומודלים */
+window.MEDIA={
+ "photos": {
+  "mgs9": {
+   "src": "MG Motor UK — חוברת MG S9 PHEV (יוני 2026), איור צד מעמוד המידות",
+   "url": "https://www.mg.co.uk/sites/default/files/2026-06/MGS9_Brochure_June_2026.pdf",
+   "kind": "official",
+   "w": 1000,
+   "h": 364,
+   "hDiscPct": 2.0
+  },
+  "carnival": {
+   "src": "קיה ישראל (kia-israel.co.il) — תמונת צד רשמית; הרקע הוסר",
+   "url": "https://kia-israel.co.il/wp-content/uploads/2016/10/KA4-PE_side_1920X1080.jpg",
+   "kind": "official",
+   "w": 910,
+   "h": 328,
+   "hDiscPct": 4.1
+  },
+  "ioniq9": {
+   "src": "יונדאי ישראל / כלמוביל (hyundaimotors.co.il) — תמונת צד רשמית",
+   "url": "https://www.hyundaimotors.co.il/models/ioniq-9",
+   "kind": "official",
+   "w": 532,
+   "h": 193,
+   "hDiscPct": 2.6
+  },
+  "santafe": {
+   "src": "יונדאי ישראל / כלמוביל (hyundaimotors.co.il) — תמונת צד רשמית",
+   "url": "https://www.hyundaimotors.co.il/models/santa-fe-hybrid",
+   "kind": "official",
+   "w": 517,
+   "h": 193,
+   "hDiscPct": 1.9
+  },
+  "mifa7": {
+   "src": "UMI מקסוס (umimaxus.co.il) — תמונת צד רשמית",
+   "url": "https://www.umimaxus.co.il/",
+   "kind": "official",
+   "w": 679,
+   "h": 250,
+   "hDiscPct": 2.9
+  },
+  "jaecoo8": {
+   "src": "תמונת יצרן (press) של Jaecoo J8 דרך ZigWheels; הרקע הוסר",
+   "url": "https://www.zigwheels.com/",
+   "kind": "press",
+   "w": 730,
+   "h": 271,
+   "hDiscPct": 4.6
+  },
+  "tiggo9": {
+   "src": "תמונת יצרן (press) של Chery Tiggo 9 דרך ZigWheels; הרקע הוסר",
+   "url": "https://www.zigwheels.com/",
+   "kind": "press",
+   "w": 583,
+   "h": 220,
+   "hDiscPct": 4.3
+  },
+  "tiggo8": {
+   "src": "צ'רי ישראל (cheryisrael.co.il) — תמונת פרופיל רשמית",
+   "url": "https://cheryisrael.co.il/models/tiggo8pro/",
+   "kind": "official",
+   "w": 1000,
+   "h": 371,
+   "hDiscPct": 2.7
+  }
+ },
+ "models": [
+  {
+   "id": "carnival",
+   "title": "Kia Carnival 2026",
+   "author": "teenlin3",
+   "author_url": "https://sketchfab.com/teenlin3",
+   "model_url": "https://sketchfab.com/3d-models/kia-carnival-2026-c43e34a6597a4b8f854745697b1f62d5",
+   "baked": [
+    5155,
+    1995,
+    1775
+   ],
+   "size": 1.8,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "ioniq9",
+   "title": "Hyundai Ioniq 9",
+   "author": "teenlin3",
+   "author_url": "https://sketchfab.com/teenlin3",
+   "model_url": "https://sketchfab.com/3d-models/hyundai-ioniq-9-174c37496b7c4047aa553ed065a6f55e",
+   "baked": [
+    5060,
+    1980,
+    1790
+   ],
+   "size": 1.2,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "santafe",
+   "title": "Hyundai Santa-Fe 2024 MX5 USA",
+   "author": "zapkolenko07",
+   "author_url": "https://sketchfab.com/zapkolenko07",
+   "model_url": "https://sketchfab.com/3d-models/hyundai-santa-fe-2024-mx5-usa-78845c725f41494482263c1610c8d087",
+   "baked": [
+    4830,
+    1900,
+    1770
+   ],
+   "size": 1.2,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "jaecoo8",
+   "title": "jaecoo j8",
+   "author": "vinishows-1753d1",
+   "author_url": "https://sketchfab.com/vinishows-1753d1",
+   "model_url": "https://sketchfab.com/3d-models/jaecoo-j8-20f044e40d5247fc8322e9b429650580",
+   "baked": [
+    4820,
+    1930,
+    1710
+   ],
+   "size": 0.75,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "tiggo9",
+   "title": "2024 Chery Tiggo 9 Pro",
+   "author": "tonielpro520",
+   "author_url": "https://sketchfab.com/tonielpro520",
+   "model_url": "https://sketchfab.com/3d-models/2024-chery-tiggo-9-pro-59c88fa8a3894d74a1f57d47686f9db3",
+   "baked": [
+    4810,
+    1925,
+    1741
+   ],
+   "size": 2.6,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "id": "tiggo8",
+   "title": "2023 Chery Tiggo 8 Pro",
+   "author": "Nazh Design (NazhDesign)",
+   "author_url": "https://sketchfab.com/NazhDesign",
+   "model_url": "https://sketchfab.com/3d-models/2023-chery-tiggo-8-pro-b8d34fba89ca45918e851eaab3b5b679",
+   "baked": [
+    4720,
+    1860,
+    1705
+   ],
+   "size": 0.72,
+   "license": "CC BY 4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  }
+ ]
+};
+</script>
+<script>/* assets/photos.js */
+(function(){
+'use strict';
+var ORDER=['carnival','ioniq9','mgs9','mifa7','santafe','jaecoo8','tiggo9','tiggo8'];
+var byId={}; SITE.cars.forEach(function(c){byId[c.id]=c;});
+var cars=ORDER.map(function(id){var c=byId[id];return {id:id,name:c.short,full:c.name,color:c.color,L:c.L,W:c.W,H:c.H,WB:c.WB,boot7:c.boot7,boot5:c.boot5,photo:MEDIA.photos[id]};});
+var nf=new Intl.NumberFormat('he-IL');
+var st={mode:'lineup',a:'carnival',b:'mgs9',op:.55,metric:'L',grid:true};
+var cv=document.getElementById('stage'),ctx=cv.getContext('2d'),statusEl=document.getElementById('status');
+var imgs={},loaded=0;
+function $(id){return document.getElementById(id);}
+// selects
+['carA','carB'].forEach(function(id,i){var s=$(id);s.innerHTML=cars.map(function(c){return '<option value="'+c.id+'">'+c.full+'</option>';}).join('');s.value=i?st.b:st.a;});
+// table
+$('ptbl').innerHTML=cars.map(function(c){var d=c.photo.hDiscPct;return '<tr><th scope="row"><span class="swatch" style="background:'+c.color+'" aria-hidden="true"></span>'+c.full+'</th><td class="num">'+nf.format(c.L)+'</td><td class="num">'+nf.format(c.W)+'</td><td class="num">'+nf.format(c.H)+'</td><td class="num">'+nf.format(c.WB)+'</td><td class="num '+(Math.abs(d)>5?'warn':'')+'">'+(d>0?'+':'')+d+'%</td><td class="small"><a href="'+c.photo.url+'" target="_blank" rel="noopener">'+c.photo.src+'</a></td></tr>';}).join('');
+function load(){
+  cars.forEach(function(c){
+    var im=new Image(); im.decoding='async';
+    im.onload=function(){loaded++;statusEl.textContent=loaded<cars.length?('נטענו '+loaded+'/'+cars.length+' תמונות…'):'';draw();};
+    im.onerror=function(){loaded++;statusEl.textContent='שגיאה בטעינת התמונה של '+c.full;};
+    im.src='img/side/'+c.id+'.webp'; imgs[c.id]=im;
+  });
+}
+function setupCanvas(h){
+  var w=$('stageWrap').clientWidth-16; var dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.style.width=w+'px'; cv.style.height=h+'px'; cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,w,h); return w;
+}
+function txt(s,x,y,o){o=o||{};ctx.save();ctx.direction='rtl';ctx.font=(o.b?'bold ':'')+(o.s||13)+'px system-ui,Arial,sans-serif';ctx.fillStyle=o.c||'#16202b';ctx.textAlign=o.a||'right';ctx.textBaseline=o.bl||'alphabetic';ctx.fillText(s,x,y);ctx.restore();}
+function grid(x0,w,yTop,yBot,pxmm){
+  if(!st.grid)return; ctx.save(); ctx.strokeStyle='rgba(11,92,173,.18)'; ctx.lineWidth=1;
+  for(var m=0;m*1000*pxmm<=w+1;m++){var x=x0+m*1000*pxmm;ctx.beginPath();ctx.moveTo(x+.5,yTop);ctx.lineTo(x+.5,yBot);ctx.stroke();if(m>0)txt(m+' מ׳',x-2,yBot+12,{s:10,c:'#5a6b7d',a:'center'});}
+  ctx.restore();
+}
+function drawCar(c,x,yGround,pxmm,alpha){
+  var im=imgs[c.id]; if(!im||!im.complete||!im.naturalWidth)return;
+  var w=c.L*pxmm, h=w*im.naturalHeight/im.naturalWidth;
+  ctx.save(); ctx.globalAlpha=alpha==null?1:alpha; ctx.drawImage(im,x,yGround-h,w,h); ctx.restore();
+}
+function lineup(){
+  var narrow=$('stageWrap').clientWidth<600;
+  var maxL=Math.max.apply(null,cars.map(function(c){return c.L;}));
+  var wTmp=$('stageWrap').clientWidth-16, padX=narrow?8:16;
+  var pxmm=(wTmp-2*padX)/maxL; var rowH=Math.max(1850*pxmm+30,60);
+  var sorted=cars.slice().sort(function(a,b){return b.L-a.L;});
+  var h=Math.round(sorted.length*rowH+24); var w=setupCanvas(h);
+  sorted.forEach(function(c,i){
+    var yG=(i+1)*rowH-4;
+    ctx.strokeStyle='#c5ccd5';ctx.beginPath();ctx.moveTo(padX,yG+.5);ctx.lineTo(w-padX,yG+.5);ctx.stroke();
+    if(st.grid){ctx.save();ctx.strokeStyle='rgba(11,92,173,.15)';for(var m=1;m*1000*pxmm<w-2*padX;m++){var gx=padX+m*1000*pxmm;ctx.beginPath();ctx.moveTo(gx+.5,yG-rowH+22);ctx.lineTo(gx+.5,yG);ctx.stroke();}ctx.restore();}
+    drawCar(c,padX,yG,pxmm);
+    txt(c.full,w-padX,yG-rowH+16,{b:1,s:narrow?12:14,c:'#16202b'});
+    txt('אורך '+nf.format(c.L)+' · גובה '+nf.format(c.H),padX,yG-rowH+16,{s:narrow?11:12,c:'#4f5b69',a:'left'});
+  });
+  if(st.grid)txt('קווי רשת כל 1 מ׳ מקצה החזית',w-padX,h-6,{s:11,c:'#4f5b69'});
+  cv.setAttribute('aria-label','שורת תמונות צד בקנה מידה אחיד, מהארוך לקצר: '+sorted.map(function(c){return c.full+' '+c.L+' מ״מ';}).join(', '));
+}
+function overlay(){
+  var A=cars.filter(function(c){return c.id===st.a;})[0],B=cars.filter(function(c){return c.id===st.b;})[0];
+  var wTmp=$('stageWrap').clientWidth-16,pad=12,maxL=Math.max(A.L,B.L);
+  var pxmm=(wTmp-2*pad)/(maxL*1.02); var h=Math.round(1900*pxmm+(wTmp<600?110:90)); var w=setupCanvas(h); var yG=h-40;
+  grid(pad,w-2*pad,24,yG,pxmm);
+  drawCar(A,pad,yG,pxmm,1); drawCar(B,pad,yG,pxmm,st.op);
+  ctx.strokeStyle='#8893a0';ctx.beginPath();ctx.moveTo(0,yG+.5);ctx.lineTo(w,yG+.5);ctx.stroke();
+  // length markers
+  [[A,yG+14],[B,yG+28]].forEach(function(p){var c=p[0],y=p[1];ctx.strokeStyle=c.color;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(pad+c.L*pxmm,y);ctx.stroke();ctx.lineWidth=1;});
+  var dL=A.L-B.L,dH=A.H-B.H,dW=A.W-B.W;
+  var narrow=w<600;
+  if(narrow){txt(A.full+' (אטום)',w-pad,16,{b:1,s:12});txt('מול '+B.full+' ('+Math.round(st.op*100)+'% שקיפות)',w-pad,32,{b:1,s:12,c:B.color==='#c9a227'?'#8a6d00':'#16202b'});}
+  else txt(A.full+' (אטום) מול '+B.full+' ('+Math.round(st.op*100)+'% שקיפות)',w-pad,16,{b:1,s:13});
+  txt((narrow?'':'הפרש: ')+'אורך '+(dL>0?'+':'')+nf.format(dL)+' · רוחב '+(dW>0?'+':'')+nf.format(dW)+' · גובה '+(dH>0?'+':'')+nf.format(dH)+' מ״מ',w-pad,narrow?48:34,{s:narrow?11:12,c:'#4f5b69'});
+  cv.setAttribute('aria-label','חפיפת '+A.full+' ו־'+B.full+'. הפרש אורך '+dL+' מ״מ, הפרש גובה '+dH+' מ״מ');
+}
+function front(){
+  var wTmp=$('stageWrap').clientWidth-16,pad=12;
+  var maxW=Math.max.apply(null,cars.map(function(c){return c.W;}));
+  var pxmm=Math.min((wTmp-2*pad)/(maxW*1.15),0.22); var h=Math.round(1900*pxmm+60+cars.length*18); var w=setupCanvas(h);
+  var yG=Math.round(1900*pxmm+30), cx=w/2;
+  if(st.grid){ctx.save();ctx.strokeStyle='rgba(11,92,173,.15)';for(var m=-1;m<=1;m++){var gx=cx+m*1000*pxmm;ctx.beginPath();ctx.moveTo(gx+.5,10);ctx.lineTo(gx+.5,yG);ctx.stroke();}for(var k=1;k*1000*pxmm<yG;k++){var gy=yG-k*1000*pxmm;ctx.beginPath();ctx.moveTo(cx-1100*pxmm,gy+.5);ctx.lineTo(cx+1100*pxmm,gy+.5);ctx.stroke();}ctx.restore();}
+  var sel=cars.slice().sort(function(a,b){return b.W*b.H-a.W*a.H;});
+  sel.forEach(function(c){
+    var ww=c.W*pxmm,hh=c.H*pxmm,x=cx-ww/2,y=yG-hh,r=Math.min(ww*.18,hh*.3);
+    ctx.save();ctx.strokeStyle=c.color;ctx.lineWidth=2.5;ctx.beginPath();
+    ctx.moveTo(x,yG);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.lineTo(x+ww-r,y);ctx.quadraticCurveTo(x+ww,y,x+ww,y+r);ctx.lineTo(x+ww,yG);ctx.stroke();ctx.restore();
+  });
+  ctx.strokeStyle='#8893a0';ctx.beginPath();ctx.moveTo(0,yG+.5);ctx.lineTo(w,yG+.5);ctx.stroke();
+  sel.forEach(function(c,i){var y=yG+22+i*18;ctx.fillStyle=c.color;ctx.fillRect(w-pad-12,y-10,12,12);txt(c.full+' — רוחב '+nf.format(c.W)+' × גובה '+nf.format(c.H),w-pad-18,y,{s:12});});
+  cv.setAttribute('aria-label','מתארי חזית סכמטיים (רוחב × גובה) של כל הרכבים בקנה מידה אחיד');
+}
+var LABELS={L:'אורך (מ״מ)',W:'רוחב (מ״מ)',H:'גובה (מ״מ)',WB:'בסיס גלגלים (מ״מ)',boot7:'תא מטען עם 7 מושבים (ל׳)',boot5:'תא מטען עם שורה 3 מקופלת (ל׳)'};
+function bars(){
+  var m=st.metric,list=cars.slice().sort(function(a,b){return (b[m]==null?-1:b[m])-(a[m]==null?-1:a[m]);});
+  var max=Math.max.apply(null,list.map(function(c){return c[m]||0;}));
+  $('bars').innerHTML='<h3 style="margin:.3rem 0 .6rem">'+LABELS[m]+'</h3>'+list.map(function(c){var v=c[m];return '<div class="bar-row"><div>'+c.full+'</div><div class="bar-track" role="img" aria-label="'+c.full+': '+(v==null?'לא פורסם':v)+'"><div class="bar-fill" style="width:'+(v==null?0:v/max*100)+'%;background:'+c.color+'"></div></div><div class="num">'+(v==null?'לא פורסם':nf.format(v))+'</div></div>';}).join('');
+}
+function draw(){
+  var isBars=st.mode==='bars';
+  cv.hidden=isBars; $('bars').hidden=!isBars;
+  document.querySelectorAll('.ov').forEach(function(e){e.hidden=st.mode!=='overlay';});
+  document.querySelectorAll('.bm').forEach(function(e){e.hidden=!isBars;});
+  document.querySelectorAll('.cv').forEach(function(e){e.hidden=isBars;});
+  if(isBars)return bars();
+  if(st.mode==='lineup')lineup();else if(st.mode==='overlay')overlay();else front();
+}
+$('modes').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st.mode=b.dataset.m;document.querySelectorAll('#modes button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});draw();});
+$('carA').addEventListener('change',function(e){st.a=e.target.value;draw();});
+$('carB').addEventListener('change',function(e){st.b=e.target.value;draw();});
+$('op').addEventListener('input',function(e){st.op=e.target.value/100;$('opV').textContent=e.target.value+'%';draw();});
+$('metric').addEventListener('change',function(e){st.metric=e.target.value;draw();});
+$('grid').addEventListener('change',function(e){st.grid=e.target.checked;draw();});
+var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(draw,120);});
+var h=new URLSearchParams(location.hash.slice(1)); if(h.get('mode'))st.mode=h.get('mode'); if(h.get('a'))st.a=h.get('a'); if(h.get('b'))st.b=h.get('b');
+document.querySelectorAll('#modes button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.m===st.mode?'true':'false');});
+$('carA').value=st.a;$('carB').value=st.b;
+draw(); load();
+})();
+</script>
 <p class="note">סטיית גובה = יחס גובה/אורך בתמונה לעומת היחס במפרט. הסטייה נובעת מפרספקטיבה, מראות ומסילות גג; ‏|סטייה| ≤ 5% נחשבת טובה. „חזית סכמטית” מציגה מתאר רוחב × גובה (ללא מראות) לפי המפרט, כי לא נמצאו תמונות חזית ישרות ברישיון מתאים לכל הדגמים.
 צ'רי טיגו 8 פרו PHEV זהה כמעט לגרסת הבנזין (אורך 4,725), ולכן מוצגת תמונה אחת.</p>
 </main>

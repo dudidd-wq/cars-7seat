@@ -28,6 +28,13 @@ for p,label,title,desc in PAGES:
     head_extra = ''
     m = re.search(r'<!--HEAD(.*?)-->', body, re.S)
     if m: head_extra = m.group(1); body = body.replace(m.group(0),'')
+    # inline small page scripts so content exists at first paint (no layout shift while external JS downloads)
+    def _inline(m):
+        js=(ROOT/'assets'/(m.group(1)+'.js')).read_text(encoding='utf-8')
+        assert '</script' not in js.lower()
+        return f'<script>/* assets/{m.group(1)}.js */\n{js}</script>'
+    body = re.sub(r'<script src="assets/(data|media|specs|photos|viewer3d)\.js"></script>', _inline, body)
+    head_extra = re.sub(r'<script src="assets/(data|media|specs|photos|viewer3d)\.js"></script>', _inline, head_extra)
     html = f'''<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
